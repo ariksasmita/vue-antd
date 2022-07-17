@@ -1,16 +1,14 @@
 <template>
   <div id="app">
-    <a-layout>
-      <a-layout-sider>Sider</a-layout-sider>
+    <a-layout style="min-height: 100vh">
+      <sidebar></sidebar>
       <a-layout>
-        <a-layout-header>Header</a-layout-header>
-          <a-layout-content>
-            <a-button>
-              <template #icon><SearchOutlined /></template>
-            </a-button>
-            <img alt="Vue logo" src="https://vuejs.org/images/logo.png" />
-            <HelloWorld msg="Welcome to Your Vue.js App" />
-          </a-layout-content>
+        <a-layout-content style="padding: 2rem">
+          <router-view/>
+          <a-button>
+            <template #icon><SearchOutlined /></template>
+          </a-button>
+        </a-layout-content>
         <a-layout-footer>Footer</a-layout-footer>
       </a-layout>
     </a-layout>
@@ -18,20 +16,20 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
-import { Button, Layout, LayoutContent, LayoutFooter, LayoutSider } from 'ant-design-vue';
+import { Button, Layout, LayoutContent, LayoutFooter /*, LayoutSider  */} from 'ant-design-vue';
 import { SearchOutlined } from '@ant-design/icons-vue';
+import Sidebar from './components/general/Sidebar.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
     AButton: Button,
     ALayout: Layout,
     ALayoutContent: LayoutContent,
     ALayoutFooter: LayoutFooter,
-    ALayoutSider: LayoutSider,
+    // ALayoutSider: LayoutSider,
     SearchOutlined,
+    Sidebar,
   },
 };
 </script>
