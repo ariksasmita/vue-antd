@@ -7,8 +7,10 @@ module.exports = {
         "plugin:vue/vue3-essential"
     ],
     "parserOptions": {
+        "parser": "babel-eslint",
         "ecmaVersion": 10,
-        "sourceType": "module"
+        "sourceType": "module",
+        "allowImportExportEverywhere": true
     },
     "plugins": [
         "vue"

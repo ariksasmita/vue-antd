@@ -13,6 +13,10 @@
         <desktop-outlined></desktop-outlined>
         <router-link class="menu-label" to="/about">About</router-link>
       </a-menu-item>
+      <a-menu-item key="3">
+        <desktop-outlined></desktop-outlined>
+        <router-link class="menu-label" to="/trade">Trade</router-link>
+      </a-menu-item>
     </a-menu>
   </a-layout-sider>
 </template>

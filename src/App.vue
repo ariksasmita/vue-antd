@@ -18,7 +18,7 @@
 <script>
 import { Button, Layout, LayoutContent, LayoutFooter /*, LayoutSider  */} from 'ant-design-vue';
 import { SearchOutlined } from '@ant-design/icons-vue';
-import Sidebar from './components/general/Sidebar.vue'
+import Sidebar from '@/components/general/Sidebar.vue'
 
 export default {
   name: 'App',
