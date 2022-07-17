@@ -1,16 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="https://vuejs.org/images/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-    <a-button>
-      <template #icon><SearchOutlined /></template>
-    </a-button>
+    <a-layout>
+      <a-layout-sider>Sider</a-layout-sider>
+      <a-layout>
+        <a-layout-header>Header</a-layout-header>
+          <a-layout-content>
+            <a-button>
+              <template #icon><SearchOutlined /></template>
+            </a-button>
+            <img alt="Vue logo" src="https://vuejs.org/images/logo.png" />
+            <HelloWorld msg="Welcome to Your Vue.js App" />
+          </a-layout-content>
+        <a-layout-footer>Footer</a-layout-footer>
+      </a-layout>
+    </a-layout>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue';
-import { Button } from 'ant-design-vue';
+import { Button, Layout, LayoutContent, LayoutFooter, LayoutSider } from 'ant-design-vue';
 import { SearchOutlined } from '@ant-design/icons-vue';
 
 export default {
@@ -18,6 +27,10 @@ export default {
   components: {
     HelloWorld,
     AButton: Button,
+    ALayout: Layout,
+    ALayoutContent: LayoutContent,
+    ALayoutFooter: LayoutFooter,
+    ALayoutSider: LayoutSider,
     SearchOutlined,
   },
 };
@@ -30,6 +43,5 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
