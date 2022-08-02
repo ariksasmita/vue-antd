@@ -28,6 +28,14 @@
           placeholder="Proximal"
           string-mode
           ></a-input-number>
+        <a-input-number
+          v-model:value="formState.distal"
+          style="width: 200px"
+          placeholder="Distal"
+          string-mode
+          ></a-input-number>
+        <div class="selectable-area">{{ entry }}</div>
+        <div class="selectable-area">{{ stopLoss }}</div>
       </a-form>
     </layout-content>
   </layout>
@@ -45,6 +53,7 @@ import {
   DatePicker,
   Select,
 } from 'ant-design-vue';
+import pairs from '@/constants/pairs'
 
 export default {
   name: 'HomeView',
@@ -59,6 +68,14 @@ export default {
     Layout,
     LayoutContent
   },
+  computed: {
+    entry () {
+      return 1234
+    },
+    stopLoss () {
+      return 2345
+    },
+  },
   data () {
     return {
       formState: {
@@ -67,20 +84,7 @@ export default {
         // pair: '',
         // position: '',
       },
-      pairOptions: [
-        {
-          value: 'AUDUSD',
-          label: 'AUDUSD'
-        },
-				{
-					value: 'AUDNZD',
-					label: 'AUDNZD'
-				},
-				{
-					value: 'AUDCHF',
-					label: 'AUDCHF'
-				},
-      ],
+      pairOptions: pairs,
       positionOptions: [
         {
           value: 'BUY',
@@ -100,3 +104,12 @@ export default {
   },
 }
 </script>
+
+<style>
+.selectable-area {
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 2px;
+  padding: 5px 11px;
+}
+</style>
